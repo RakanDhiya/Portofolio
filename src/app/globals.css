@@ -24,3 +24,54 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero-glow {
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(112, 65, 145, 0.25),
+      transparent 45%),
+    radial-gradient(circle at 20% 20%,
+      rgba(85, 48, 110, 0.2),
+      transparent 35%);
+
+  animation: ambient-move 10s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-move {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.floral-atmosphere {
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(112, 65, 145, 0.16),
+      transparent 50%);
+
+  animation: floral-atmosphere 12s ease-in-out infinite alternate;
+}
+
+@keyframes floral-atmosphere {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floral-atmosphere {
+    animation: none;
+  }
+}
